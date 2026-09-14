@@ -1,0 +1,46 @@
+FISIO-OSTEOPATÍA — VERSIÓN DE INSTALACIÓN SENCILLA
+
+Esta entrega está preparada para generar un EXE de Windows.
+
+IMPORTANTE:
+El entorno donde se ha preparado el proyecto no puede compilar un EXE nativo de Windows.
+Por eso se incluye un proceso automático para que, en un PC con Windows, se genere el EXE.
+
+OPCIÓN MÁS SENCILLA:
+1. Copia esta carpeta a un PC con Windows 10/11.
+2. Instala Python 3.11+ desde python.org y marca "Add Python to PATH".
+3. Haz doble clic en CREAR_EXE_WINDOWS.bat.
+4. Espera a que termine.
+5. Entra en la carpeta "dist".
+6. Haz doble clic en FisioOsteopatia.exe.
+
+ACCESO INICIAL:
+Usuario: admin
+Contraseña: admin
+
+DATOS:
+Se guardan localmente en:
+%USERPROFILE%\FisioOsteopatia
+
+COPIA DE SEGURIDAD:
+Desde el programa: botón "Copia de seguridad".
+Las copias quedan en la subcarpeta "Copias".
+
+PARA CREAR UN INSTALADOR TIPO "SIGUIENTE > SIGUIENTE > INSTALAR":
+Instala Inno Setup en Windows, abre INSTALADOR_INNO_SETUP.iss y pulsa Compile.
+El instalador quedará en la carpeta "installer".
+
+FUNCIONES INCLUIDAS:
+- Pacientes y ficha clínica
+- Antecedentes, alergias y medicación
+- Valoración fisioterapéutica/osteopática
+- EVA 0-10
+- Sesiones y evolución
+- Tratamientos y ejercicios
+- Agenda
+- Copias de seguridad
+- Exportación CSV
+- Usuario y contraseña con hash PBKDF2
+
+AVISO:
+Es una versión funcional de base. Antes de utilizarla con historias clínicas reales, hay que adaptar seguridad, privacidad, protección de datos, consentimiento, auditoría y requisitos legales de la consulta.

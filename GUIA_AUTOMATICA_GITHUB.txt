@@ -1,0 +1,77 @@
+PROCEDIMIENTO AUTOMÁTICO — NO NECESITAS INSTALAR PYTHON NI INNO SETUP
+
+La idea es usar GitHub para que un ordenador Windows en la nube compile el programa.
+Tu PC solo sirve para subir los archivos y descargar el instalador terminado.
+
+PARTE 1 — Crear una cuenta de GitHub
+1. Entra en https://github.com/
+2. Pulsa Sign up.
+3. Crea una cuenta gratuita y confirma el correo.
+
+PARTE 2 — Crear el proyecto
+1. Una vez dentro, pulsa el botón + de arriba a la derecha.
+2. Elige New repository.
+3. Nombre: FisioOsteopatia
+4. Marca Public (es la opción más sencilla para este procedimiento).
+5. Pulsa Create repository.
+
+PARTE 3 — Subir los archivos
+1. En el repositorio nuevo pulsa Add file.
+2. Elige Upload files.
+3. Abre la carpeta que contiene FisioOsteopatia.py, INSTALADOR_INNO_SETUP.iss
+   y la carpeta .github.
+4. Arrastra TODOS esos archivos y carpetas al navegador.
+5. Pulsa Commit changes.
+
+IMPORTANTE:
+La carpeta .github debe conservar esta estructura:
+.github/workflows/build.yml
+
+PARTE 4 — Ejecutar la compilación automática
+1. En el repositorio, pulsa la pestaña Actions.
+2. A la izquierda aparecerá "Crear instalador Windows".
+3. Pulsa sobre ella.
+4. Pulsa Run workflow.
+5. Pulsa el botón verde Run workflow.
+
+GitHub abrirá un ordenador Windows temporal y fabricará:
+FisioOsteopatia.exe
+y
+FisioOsteopatia_Instalador_Windows.exe
+
+Puede tardar unos minutos.
+
+PARTE 5 — Descargar el instalador
+1. Cuando el trabajo aparezca con un círculo verde, la compilación terminó.
+2. Entra en la ejecución terminada.
+3. Baja hasta Artifacts.
+4. Pulsa:
+   FisioOsteopatia-Instalador-Windows
+5. Se descargará un ZIP.
+6. Descomprímelo.
+7. Dentro estará:
+   FisioOsteopatia_Instalador_Windows.exe
+
+Ese es el archivo que debes utilizar en tu ordenador.
+
+PARTE 6 — Instalar en Windows
+En el ordenador de la clínica:
+1. Doble clic en FisioOsteopatia_Instalador_Windows.exe
+2. Siguiente
+3. Siguiente
+4. Instalar
+5. Finalizar
+
+NO hace falta instalar Python.
+
+ACCESO INICIAL:
+Usuario: admin
+Contraseña: admin
+
+MUY IMPORTANTE:
+Después del primer acceso, cambia la contraseña si vas a usar datos reales.
+
+NOTA DE SEGURIDAD:
+Esta aplicación es un prototipo funcional. Antes de usarla con historias clínicas reales,
+debe revisarse su cumplimiento de RGPD/LOPDGDD, controles de acceso, copias, cifrado,
+auditoría, consentimiento y demás requisitos aplicables a una consulta sanitaria.

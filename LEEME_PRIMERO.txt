@@ -1,0 +1,23 @@
+FISIO-OSTEOPATIA - INSTALADOR SIN PYTHON PARA EL USUARIO FINAL
+
+OBJETIVO
+El programa que se entrega al paciente/clinica puede ser un EXE independiente:
+NO necesita Python instalado para ejecutarse.
+
+IMPORTANTE
+Este paquete es el proyecto de compilacion. Para entregar un instalador
+"FisioOsteopatia_Instalador.exe" completamente independiente hay que realizar
+la compilacion en Windows (PyInstaller + Inno Setup). El PC donde se haga esa
+compilacion es solo el PC de preparacion; el ordenador final NO necesita Python.
+
+FORMA RECOMENDADA
+1. En un PC Windows de preparacion, ejecuta CREAR_INSTALADOR_WINDOWS.bat.
+2. Si Python ya esta instalado, crea dist\FisioOsteopatia.exe.
+3. Con Inno Setup se genera installer\FisioOsteopatia_Instalador_Windows.exe.
+4. Ese instalador es el que se copia al ordenador de la clinica.
+5. En el ordenador de la clinica: doble clic -> Siguiente -> Instalar -> Finalizar.
+6. No se instala Python en el ordenador de la clinica.
+
+Si no quieres instalar Python NI siquiera en el PC de preparacion, el proyecto
+incluye .github\workflows\build.yml para compilar automaticamente en Windows
+mediante GitHub Actions.
