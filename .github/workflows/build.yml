@@ -1,0 +1,39 @@
+name: Crear instalador Windows
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Descargar proyecto
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar PyInstaller
+        run: python -m pip install --upgrade pip pyinstaller
+
+      - name: Crear EXE independiente
+        run: pyinstaller --noconfirm --clean --onefile --windowed --name FisioOsteopatia FisioOsteopatia.py
+
+      - name: Instalar Inno Setup
+        shell: powershell
+        run: choco install innosetup --yes --no-progress
+
+      - name: Crear instalador
+        shell: powershell
+        run: |
+          New-Item -ItemType Directory -Force -Path installer | Out-Null
+          & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" "INSTALADOR_INNO_SETUP.iss"
+
+      - name: Publicar instalador
+        uses: actions/upload-artifact@v4
+        with:
+          name: FisioOsteopatia-Instalador-Windows
+          path: installer/FisioOsteopatia_Instalador_Windows.exe
